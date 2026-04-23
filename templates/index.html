@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SRM Lab Assistant</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Share+Tech+Mono&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ HOME PAGE ═══ -->
+<div id="page-home" class="page active">
+  <nav>
+    <a class="nav-logo" onclick="showPage('home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
+      </svg>
+      SRM Lab Assistant
+    </a>
+    <div class="nav-links">
+      <a href="#" class="active-link">Research Portal</a>
+      <a href="#">Lab Inventory</a>
+      <div class="nav-globe">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="tag-line">Academic Tool for SRMIST Students</div>
+    <h1 class="hero-title">Pioneering the Frontiers of Molecular Excellence</h1>
+    <p class="hero-sub">"Every failed experiment is a step closer to a scientific breakthrough. Keep exploring."</p>
+    <div class="btn-group">
+      <button class="btn-primary" onclick="showPage('experiments')">Chemistry Experiments</button>
+      <button class="btn-outline">View Lab Safety</button>
+    </div>
+
+    <!-- SVG Test Tubes - Tilting toward each other -->
+    <div class="tubes-container">
+      <svg class="tubes-svg" viewBox="0 0 300 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="glowBlue" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#4fa3ff" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#4fa3ff" stop-opacity="0"/>
+          </radialGradient>
+          <radialGradient id="glowGreen" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.35"/>
+            <stop offset="100%" stop-color="#00e5a0" stop-opacity="0"/>
+          </radialGradient>
+          <linearGradient id="tubeBodyBlue" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="rgba(100,160,255,0.15)"/>
+            <stop offset="35%" stop-color="rgba(160,200,255,0.35)"/>
+            <stop offset="100%" stop-color="rgba(60,120,220,0.1)"/>
+          </linearGradient>
+          <linearGradient id="fillBlue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#2a7fff" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#0a2a6e" stop-opacity="0.95"/>
+          </linearGradient>
+          <linearGradient id="tubeBodyGreen" x1="0" y1="0" x2="1" y2="0">
+            <stop offset="0%" stop-color="rgba(0,229,160,0.12)"/>
+            <stop offset="35%" stop-color="rgba(100,255,200,0.3)"/>
+            <stop offset="100%" stop-color="rgba(0,180,120,0.08)"/>
+          </linearGradient>
+          <linearGradient id="fillGreen" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#00e5a0" stop-opacity="0.85"/>
+            <stop offset="100%" stop-color="#004d36" stop-opacity="0.95"/>
+          </linearGradient>
+          <filter id="gBlur">
+            <feGaussianBlur stdDeviation="10"/>
+          </filter>
+        </defs>
+
+        <ellipse cx="110" cy="200" rx="60" ry="30" fill="url(#glowBlue)" filter="url(#gBlur)"/>
+        <ellipse cx="195" cy="200" rx="60" ry="30" fill="url(#glowGreen)" filter="url(#gBlur)"/>
+
+        <g class="tube-blue" transform="rotate(25, 110, 80)">
+          <rect x="90" y="60" width="40" height="150" rx="20" fill="url(#tubeBodyBlue)" stroke="rgba(130,180,255,0.45)" stroke-width="1.5"/>
+          <clipPath id="clipBlue"><rect x="90" y="60" width="40" height="150" rx="20"/></clipPath>
+          <rect x="90" y="120" width="40" height="90" fill="url(#fillBlue)" clip-path="url(#clipBlue)"/>
+          <rect x="95" y="70" width="8" height="80" rx="4" fill="rgba(200,225,255,0.18)"/>
+        </g>
+
+        <g class="tube-green" transform="rotate(-25, 190, 80)">
+          <rect x="170" y="60" width="40" height="150" rx="20" fill="url(#tubeBodyGreen)" stroke="rgba(80,255,180,0.4)" stroke-width="1.5"/>
+          <clipPath id="clipGreen"><rect x="170" y="60" width="40" height="150" rx="20"/></clipPath>
+          <rect x="170" y="115" width="40" height="95" fill="url(#fillGreen)" clip-path="url(#clipGreen)"/>
+          <rect x="175" y="70" width="8" height="80" rx="4" fill="rgba(180,255,230,0.16)"/>
+        </g>
+
+        <g class="spark" transform="translate(150,68)">
+          <circle r="6" fill="white" opacity="0.9"/>
+          <line x1="0" y1="-14" x2="0" y2="-9" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="0" y1="9" x2="0" y2="14" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="-14" y1="0" x2="-9" y2="0" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="9" y1="0" x2="14" y2="0" stroke="white" stroke-width="2" stroke-linecap="round"/>
+          <line x1="-10" y1="-10" x2="-6" y2="-6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="6" y1="6" x2="10" y2="10" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="10" y1="-10" x2="6" y2="-6" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+          <line x1="-6" y1="6" x2="-10" y2="10" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="footer-bar">
+    <span>SRMIST CHEMISTRY DEPT</span>
+    <div class="footer-dot"></div>
+    <span class="copyright-highlight">copyright claimed by SHUBHAM VERMA</span>
+    <div class="footer-dot"></div>
+    <span>FIRST YEAR LABORATORY</span>
+  </div>
+</div>
+
+<svg class="star-deco" viewBox="0 0 28 28" fill="white">
+  <polygon points="14,0 17,10 28,10 19.5,16 22.5,27 14,21 5.5,27 8.5,16 0,10 11,10"/>
+</svg>
+
+<!-- Developer Info Button -->
+<div class="dev-info-btn" onclick="toggleDevInfo()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+</div>
+
+<!-- Developer Info Popup -->
+<div class="dev-info-popup" id="devInfoPopup">
+  <div class="dev-title">DEVELOPED BY</div>
+  <div class="dev-name">~SHUBHAM VERMA (RA2511026050324)</div>
+  <div class="dev-name">~AAYUSH KARN (RA2511026050323)</div>
+  <div class="dev-name">~SHUBHI DEV (RA2511026050327)</div>
+</div>
+
+
+<!-- ═══════════════════════════════════════ EXPERIMENTS LIST PAGE ═══ -->
+<div id="page-experiments" class="page">
+  <nav>
+    <a class="nav-logo" onclick="showPage('home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
+      </svg>
+      SRM Lab Assistant
+    </a>
+    <div class="nav-links">
+      <a href="#" onclick="showPage('home')">Research Portal</a>
+      <a href="#">Lab Inventory</a>
+                <div class="nav-globe">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+    </div>
+  </nav>
+
+  <div class="breadcrumb">
+    <span onclick="showPage('home')">Home</span>
+    <span class="sep">›</span>
+    <span class="current">Chemistry Experiments</span>
+  </div>
+
+  <div class="page-header">
+    <div class="page-tag">Chemistry Laboratory</div>
+    <h2 class="page-title">All Experiments</h2>
+    <p class="page-subtitle">Select an experiment to view its resources and summary</p>
+  </div>
+
+  <div class="experiments-grid">
+  </div>
+
+  <div class="footer-bar">
+    <span>SRMIST CHEMISTRY DEPT</span>
+    <div class="footer-dot"></div>
+    <span>7 EXPERIMENTS</span>
+    <div class="footer-dot"></div>
+    <span>FIRST YEAR LABORATORY</span>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════ EXPERIMENT DETAIL PAGE ═══ -->
+<div id="page-detail" class="page">
+  <nav>
+    <a class="nav-logo" onclick="showPage('home')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 3H5a2 2 0 0 0-2 2v4m6-6h10a2 2 0 0 1 2 2v4M9 3v18m0 0h10a2 2 0 0 0 2-2v-4M9 21H5a2 2 0 0 1-2-2v-4m0 0h18"/>
+      </svg>
+      SRM Lab Assistant
+    </a>
+    <div class="nav-links">
+      <a href="#" onclick="showPage('home')">Research Portal</a>
+      <a href="#" onclick="showPage('experiments')" class="active-link">Lab Inventory</a>
+      <div class="nav-globe">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      </div>
+    </div>
+  </nav>
+
+  <div class="breadcrumb" id="detail-breadcrumb">
+    <span onclick="showPage('home')">Home</span>
+    <span class="sep">›</span>
+    <span onclick="showPage('experiments')">Experiments</span>
+    <span class="sep">›</span>
+    <span class="current" id="detail-breadcrumb-title">Experiment</span>
+  </div>
+
+  <div class="detail-content">
+    <div class="detail-exp-num" id="detail-exp-num">EXPERIMENT 01</div>
+    <h1 class="detail-title" id="detail-exp-title">Loading...</h1>
+
+    <div class="action-buttons">
+      <button class="action-btn" id="btn-pdf" onclick="handlePDF()">
+        <span class="btn-icon">📄</span>
+        <span class="btn-label">
+          View PDF
+          <span class="btn-sub">Open in new tab</span>
+        </span>
+      </button>
+      <button class="action-btn" id="btn-summary" onclick="togglePanel('summary')">
+        <span class="btn-icon">📘</span>
+        <span class="btn-label">
+          Summary
+          <span class="btn-sub">Experiment overview</span>
+        </span>
+      </button>
+      <button class="action-btn" id="btn-notebook" onclick="toggleNotebook(); togglePanel('notebook')">
+        <span class="btn-icon">📸</span>
+        <span class="btn-label">
+          Notebook
+          <span class="btn-sub">Answer key</span>
+        </span>
+      </button>
+      <button class="action-btn" id="btn-video" onclick="togglePanel('video')">
+        <span class="btn-icon">🎥</span>
+        <span class="btn-label">
+          Watch Video
+          <span class="btn-sub">Procedure walkthrough</span>
+        </span>
+      </button>
+      <button class="action-btn" id="btn-calculate" onclick="openCalculator()">
+        <span class="btn-icon">🧮</span>
+        <span class="btn-label">
+          Calculate Results
+          <span class="btn-sub">Open calculator</span>
+        </span>
+      </button>
+    </div>
+
+    <div class="toggle-panel" id="panel-summary">
+      <div class="toggle-panel-inner">
+        <div class="panel-title">Experiment Summary</div>
+        <p class="panel-text" id="panel-summary-text"></p>
+      </div>
+    </div>
+
+    <div class="toggle-panel" id="panel-notebook">
+      <div class="toggle-panel-inner">
+        <div class="panel-title">Notebook / Answer Key</div>
+        
+        <div id="notebookSection" style="display: none; margin-top: 20px;">
+          <!-- Images container (only shown for Experiment 1) -->
+          <div id="imageGallery" class="image-gallery" style="display: none;">
+            <img src="{{ url_for('static', filename='images/exp1 - 1.jpeg') }}" alt="Experiment 1 - Step 1" onclick="openFullscreen(this.src)">
+            <img src="{{ url_for('static', filename='images/exp1-2.jpeg') }}" alt="Experiment 1 - Step 2" onclick="openFullscreen(this.src)">
+            <img src="{{ url_for('static', filename='images/exp1-3.jpeg') }}" alt="Experiment 1 - Step 3" onclick="openFullscreen(this.src)">
+            <img src="{{ url_for('static', filename='images/exp1-4.jpeg') }}" alt="Experiment 1 - Step 4" onclick="openFullscreen(this.src)">
+            <img src="{{ url_for('static', filename='images/exp1-5.jpeg') }}" alt="Experiment 1 - Step 5" onclick="openFullscreen(this.src)">
+            <img src="{{ url_for('static', filename='images/exp1-6.jpeg') }}" alt="Experiment 1 - Step 6" onclick="openFullscreen(this.src)">
+            <img src="{{ url_for('static', filename='images/exp1-7.jpeg') }}" alt="Experiment 1 - Step 7" onclick="openFullscreen(this.src)">
+            <img src="{{ url_for('static', filename='images/exp1-8.jpeg') }}" alt="Experiment 1 - Step 8" onclick="openFullscreen(this.src)">
+            <img src="{{ url_for('static', filename='images/exp1-9.jpeg') }}" alt="Experiment 1 - Step 9" onclick="openFullscreen(this.src)">
+            <img src="{{ url_for('static', filename='images/exp1-10.jpeg') }}" alt="Experiment 1 - Step 10" onclick="openFullscreen(this.src)">
+            <img src="{{ url_for('static', filename='images/exp1-11.jpeg') }}" alt="Experiment 1 - Step 11" onclick="openFullscreen(this.src)">
+          </div>
+          <!-- Placeholder (shown for Experiments 2-7) -->
+          <div id="notebookPlaceholder" class="panel-coming">Notebook images will be added soon</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullscreen Image Overlay -->
+    <div id="fullscreenOverlay" class="fullscreen-overlay" onclick="closeFullscreen()" style="display: none;">
+      <span class="fullscreen-close" onclick="closeFullscreen()">✕</span>
+      <img id="fullscreenImage" class="fullscreen-img" onclick="event.stopPropagation()">
+    </div>
+
+    <div class="toggle-panel" id="panel-video">
+      <div class="toggle-panel-inner">
+        <div class="panel-title">Video Walkthrough</div>
+        <div class="panel-coming">Video will be added soon</div>
+      </div>
+    </div>
+
+    <div class="h-divider" style="margin-top:18px"></div>
+
+    <button class="btn-outline" style="margin-top:20px;font-size:0.8rem;padding:12px 32px;" onclick="showPage('experiments')">
+      ← Back to All Experiments
+    </button>
+  </div>
+
+  <div class="footer-bar">
+    <span>SRMIST CHEMISTRY DEPT</span>
+    <div class="footer-dot"></div>
+    <span>FIRST YEAR LABORATORY</span>
+  </div>
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

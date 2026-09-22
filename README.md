@@ -197,6 +197,19 @@ It also served as a practical project for learning and applying:
 
 ---
 
+## 📚 Learning Outcomes
+
+Building this project helped strengthen practical experience with:
+
+* 🐍 **Python** — application logic and backend development
+* 🌐 **Flask** — creating routes and serving a web application
+* 🎨 **HTML & CSS** — structuring and styling the user interface
+* ⚡ **JavaScript** — adding interactive behaviour to the application
+* 📁 **Project Organization** — managing templates, static files, and application resources
+* 🧪 **Technical Documentation** — presenting laboratory procedures and experiment information digitally
+* 🔧 **Git & GitHub** — version control and maintaining a software project
+
+
 ## 🔮 Future Improvements
 
 Possible future improvements include:
